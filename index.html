@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link href="lab6.css" rel="stylesheet" />	
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	</head>
+	
+<div id='content'>		
+<body ng-app="myShoppingList">
+		<div class='container'>
+			<h1>My Shopping List</h1>
+		</div>
+
+<div class="main" ng-controller="myCtrl">
+ <div class="container">
+
+  <ul>
+    <li ng-repeat="x in products" >{{x}}
+	  <span class="items" ng-click="removeItem($index)">&times;</span>
+	</li>
+  </ul>
+</div>
+	<div class="add">
+    <input placeholder="Add items here.." ng-model="add">
+    <button ng-click="addItem()">Add</button>
+	 <p class="error">{{errortext}}</p>
+	</div>
+</div>	
+	
+	
+	<!-- Modules -->
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="lab6controller.js"></script>
+</body>	
+</div>
+</html>
